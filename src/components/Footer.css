@@ -1,0 +1,27 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #00bcd4;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #ccc;
+}
