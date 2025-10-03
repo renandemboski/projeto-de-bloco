@@ -1,0 +1,24 @@
+# Como usar
+
+# onClick é passado normalmente.
+<Button onClick={() => console.log('Ação disparada!')}>
+Salvar Dados
+</Button>
+
+# Desabilitar.
+<Button disabled>
+Aguardando preenchimento
+</Button>
+
+# Para que o botão funcione como um link, defina a propriedade asLink={true} e passe o destino através do atributo href.
+<Button asLink href="/perfil">
+  Ir para o Meu Perfil
+</Button>
+
+# Customização.
+# O visual é controlado por classes no arquivo Button.css. O componente aplica as classes base (button-base e button-default). Use a prop className para adicionar estilos de variante ou tamanho.
+
+# Supondo que você tenha as classes 'btn-outline' e 'btn-grande' no seu CSS
+<Button className="button-outline button-large">
+Botão Customizado
+</Button>
