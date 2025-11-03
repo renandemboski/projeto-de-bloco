@@ -20,14 +20,3 @@
     --text-color: #101113;
   }
 }
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0 auto;
-  max-width: 1280px;
-  height: 100vh;
-}
-h1{
-  margin: 0;
-}
