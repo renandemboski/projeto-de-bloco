@@ -2,23 +2,26 @@ import React from "react";
 import Button from "./ui/Button/Button";
 import "./Card.css";
 
-function Card() {
+function Card({
+  title,
+  description,
+  price,
+  buttonText,
+  imageSrc,
+  imageAlt = "image",
+  onButtonClick,
+}) {
   return (
     <section className="card">
-      <div>
-        <h1>Terapeutas profissionais e qualificados em quem pode confiar</h1>
-        <p>
-          Com os nossos terapeutas, você obtém o mesmo profissionalismo e qualidade 
-          que esperaria de um terapeuta no consultório, mas com a capacidade de se 
-          encontrar quando e como quiser.
-        </p>
+      <div className="description">
+        <h1>{title}</h1>
+        <p>{description}</p>
         <p className="price">
-        Sessões a partir de <strong>R$ 79,90</strong>
-      </p>
-        <Button>Encontre um terapeuta</Button>
+          Sessões a partir de <strong>{price}</strong>
+        </p>
+        <Button onClick={onButtonClick}>{buttonText}</Button>
       </div>
-
-      <img src="/terapeuta.png" alt="Terapeuta" />
+      <img src={imageSrc} alt={imageAlt} />
     </section>
   );
 }
