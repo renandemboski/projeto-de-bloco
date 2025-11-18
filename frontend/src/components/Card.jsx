@@ -20,7 +20,10 @@ function Card({
         </p>
         <Button onClick={onButtonClick}>{buttonText}</Button>
       </div>
-      <img src={imageSrc} alt={imageAlt} />
+
+      <div className="image-wrapper">
+        <img className="card-image" src={imageSrc} alt={imageAlt} />
+      </div>
     </section>
   );
 }

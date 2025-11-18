@@ -2,17 +2,57 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1280px;
+
+  width: 100%;           
+  max-width: 1280px;
   margin: 0 auto;
+
   height: 80px;
   border-bottom: 1px solid #222;
   padding: 0 20px;
   box-sizing: border-box;
 }
-.header img{
+
+.header img {
   width: 60px;
 }
-.button{
+
+.button {
   padding: 0 20px;
+}
+
+.menu {
+  padding: 0 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/*          RESPONSIVIDADE         */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px;
   }
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .button {
+    margin: 10px;
+  }
+
+  .menu {
+    margin: 10px;
+  }
+}
+
 

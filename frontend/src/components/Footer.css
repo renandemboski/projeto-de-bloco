@@ -1,19 +1,25 @@
 .footer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   color: #fff;
   text-align: center;
   padding: 1.5rem 1rem;
   border-top: 1px solid #222;
-  max-width: 1280px;
+  box-sizing: border-box;
 }
 
 .footer-links {
   margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer-links a {
   color: #00bcd4;
   text-decoration: none;
-  margin: 0 1rem;
   font-size: 1rem;
 }
 

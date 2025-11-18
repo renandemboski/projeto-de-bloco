@@ -4,16 +4,39 @@
   min-height: 100vh;
 }
 
+/* Área principal */
 .home-main {
   flex: 1;
   display: flex;
-
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  padding: 2rem;
 }
 
+/* Grid dos usuários / cards */
 .users-grid {
+  width: 100%;
+  max-width: 1200px;
+
   display: grid;
-  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .users-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .home-main {
+    padding: 1rem;
+  }
+
+  .users-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
