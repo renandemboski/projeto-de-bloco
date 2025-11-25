@@ -1,10 +1,30 @@
-# Mind Care
+# MindCare
 
-# Projeto de Bloco: Desenvolvimento Front-end com Frameworks
+Plataforma de saúde mental que conecta pacientes a profissionais qualificados.
 
-**Para rodar o projeto:**
+## 📋 Estrutura do Projeto
 
-1. Clone o repositório e entre na pasta do projeto
-2. Instale as dependências com `npm install`
-3. Execute o projeto com `npm run dev`
-4. Abra o link que aparecer no terminal no navegador
+```
+mindcare/
+├── backend/    # API REST (Node.js + Express)
+├── frontend/   # Web App (React + Vite)
+```
+
+## 🚀 Como Executar
+
+### 1️⃣ Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 2️⃣ Frontend Web
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
