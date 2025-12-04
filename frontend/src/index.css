@@ -1,12 +1,16 @@
 :root {
-  --background-color: #101113;
-  --text-color: #ffffff;
+  --background-color: #16161E;
+  --text-color: #fff;
+  --primary-color: #E13055;
+  --primary-hover: #E13055;
+  --card-background: #1A1B26;
+  --border-color: #333;
+  --success-color: #28a745;
+  --error-color: #dc3545;
 
-  font-family: 'Overpass', sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,9 +18,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-color: #ffffff;
-    --text-color: #333;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
