@@ -1,5 +1,7 @@
-#root {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -7,19 +9,10 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  max-width: 1280px;
-  margin: 0 auto;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border-left: 1px solid #222;
-  border-right: 1px solid #222;
-}
-
-h1 {
-  margin: 0;
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
