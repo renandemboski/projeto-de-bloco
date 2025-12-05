@@ -1,4 +1,3 @@
-import "./Home.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
@@ -6,48 +5,102 @@ import Header from "../../components/Header";
 import Card from "../../components/Card";
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
+  const [profissionais, setProfissionais] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
+    fetch("http://localhost:3000/profissionais")
+      .then((res) => {
+        if (!res.ok) throw new Error("Erro ao carregar profissionais");
+        return res.json();
+      })
       .then((data) => {
-        setUsers(data);
+        setProfissionais(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Erro ao buscar usuários:", err);
+        console.error("Erro:", err);
+        setError(err.message);
         setLoading(false);
       });
   }, []);
 
-  const handleUserClick = (user) => {
-    navigate("/professional", { state: { user } });
+  const handleProfessionalClick = (professional) => {
+    navigate("/professional", { state: { professional } });
+  };
+
+  const styles = {
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh",
+      backgroundColor: "var(--background-color)",
+    },
+    main: {
+      flex: 1,
+      padding: "2rem 1rem",
+      display: "flex",
+      justifyContent: "center",
+    },
+    content: {
+      width: "100%",
+      maxWidth: "1280px",
+    },
+    title: {
+      textAlign: "center",
+      fontSize: "28px",
+      color: "var(--text-color)",
+      marginBottom: "2rem",
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+      gap: "1.5rem",
+      alignItems: "stretch",
+    },
+    loading: {
+      textAlign: "center",
+      fontSize: "18px",
+      color: "var(--text-color)",
+      padding: "2rem",
+    },
+    error: {
+      textAlign: "center",
+      fontSize: "18px",
+      color: "var(--error-color)",
+      padding: "2rem",
+    },
   };
 
   return (
-    <div className="home-container">
+    <div style={styles.container}>
       <Header />
-      <main className="home-main">
-        {loading ? (
-          <p>Carregando usuários...</p>
-        ) : (
-          <div className="users-grid">
-            {users.map((user) => (
-              <Card
-                key={user.id}
-                title={user.name}
-                description={`Email: ${user.email}\nTelefone: ${user.phone}\n`}
-                price={`R$ ${Math.floor(Math.random() * 100 + 50)},00`}
-                imageSrc={`https://i.pravatar.cc/150?img=${user.id}`}
-                buttonText="Ver Detalhes"
-                onButtonClick={() => handleUserClick(user)}
-              />
-            ))}
-          </div>
-        )}
+      <main style={styles.main}>
+        <div style={styles.content}>
+          <h2 style={styles.title}>Nossos Profissionais</h2>
+
+          {loading && <p style={styles.loading}>Carregando profissionais...</p>}
+
+          {error && <p style={styles.error}>{error}</p>}
+
+          {!loading && !error && (
+            <div style={styles.grid}>
+              {profissionais.map((prof) => (
+                <Card
+                  key={prof.id}
+                  title={prof.name}
+                  description={prof.description}
+                  price={prof.price}
+                  imageSrc={prof.image}
+                  buttonText="Ver Detalhes"
+                  onButtonClick={() => handleProfessionalClick(prof)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </main>
       <Footer />
     </div>
@@ -55,3 +108,4 @@ const Home = () => {
 };
 
 export default Home;
+
