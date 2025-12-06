@@ -8,6 +8,7 @@ Plataforma de saúde mental que conecta pacientes a profissionais qualificados.
 mindcare/
 ├── backend/    # API REST (Node.js + Express)
 ├── frontend/   # Web App (React + Vite)
+├── mobile/     # App Mobile (React Native)
 ```
 
 ## 🚀 Como Executar
@@ -28,3 +29,10 @@ npm install
 npm run dev
 ```
 
+### 3️⃣ Mobile
+
+```bash
+cd mobile
+npm install
+npx expo start
+```
